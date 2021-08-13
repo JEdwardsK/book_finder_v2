@@ -1,10 +1,15 @@
 import React from 'react'
-
+import { BrowserRouter, Link, Switch } from 'react-router-dom'
+import HomePage from './components/HomePage'
 const App = () => {
   return (
-    <div>
-      Hello World
-    </div>
+    <BrowserRouter>
+    <Switch>
+      <Link to ='/'>
+        <HomePage/>
+      </Link>
+    </Switch>
+    </BrowserRouter>
   )
 }
 
