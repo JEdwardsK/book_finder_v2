@@ -19,6 +19,7 @@ function AirScooterSVG({colourScheme, size}) {
     }
   }
 
+
   const fullMovement = {
     loop: Infinity,
   }
@@ -170,38 +171,32 @@ function AirScooterSVG({colourScheme, size}) {
             <use xlinkHref="#aang_body_left" fill={primary} />
             <use xlinkHref="#aang_belly_left" fill={secondary} />
             <use xlinkHref="#aang_belly_right" fill={secondary} />
-            <use xlinkHref="#aang_hand_left" fill={skin} />
-            <use xlinkHref="#aang_hand_tat_left" fill={tattoos} />
-            <use xlinkHref="#aang_arm_left" fill={secondary} />
             <use xlinkHref="#aang_foot_left" fill={boots} />
             <use xlinkHref="#aang_leg_left" fill={secondary} />
             <use xlinkHref="#aang_leg_right" fill={secondary} />
-            <use xlinkHref="#aang_neck" fill={skin} />
             <use xlinkHref="#aang_belt" fill={primary} />
             <use xlinkHref="#aang_foot_right" fill={boots} />
-            
-              <g>
-                <use xlinkHref="#aang_knee_right" fill={secondary} />
-              </g>
-              <g>
-                <use xlinkHref="#aang_collar_left" fill={secondary} />
-                <use xlinkHref="#aang_collar_right" fill={secondary} />
-              </g>
-              <g>
-                <use xlinkHref="#aang_neck_shadow" fill={neckShadow} />
-              </g>
-              <g id="group_head">
-                <use xlinkHref="#aang_head" fill={skin} />
-                <use xlinkHref="#aang_head_tattoo" fill={tattoos} />
-              </g>
-              <g id="group_arm_right">
-                <use xlinkHref="#aang_hand_right" fill={skin} />
-                <use xlinkHref="#aang_hand_tat_right" fill={tattoos} />
-                <use xlinkHref="#aang_arm_right" fill={secondary} />
-              </g>
-              <g>
-                <use xlinkHref="#aang_air_scooter" fill="#a1e4ff" fillOpacity={0.51} />
-              </g>
+            <use xlinkHref="#aang_knee_right" fill={secondary} />
+            <g id="group_head">
+            <use xlinkHref="#aang_neck" fill={skin} />
+            <use xlinkHref="#aang_collar_left" fill={secondary} />
+            <use xlinkHref="#aang_collar_right" fill={secondary} />
+            <use xlinkHref="#aang_neck_shadow" fill={neckShadow} />
+              <use xlinkHref="#aang_head" fill={skin} />
+              <use xlinkHref="#aang_head_tattoo" fill={tattoos} />
+            </g>
+            <g id="group_arm_left">
+              <use xlinkHref="#aang_hand_left" fill={skin} />
+              <use xlinkHref="#aang_hand_tat_left" fill={tattoos} />
+              <use xlinkHref="#aang_arm_left" fill={secondary} />
+            </g>
+            <g id="group_arm_right">
+              <use xlinkHref="#aang_hand_right" fill={skin} />
+              <use xlinkHref="#aang_hand_tat_right" fill={tattoos} />
+              <use xlinkHref="#aang_arm_right" fill={secondary} />
+            </g>  
+            <use xlinkHref="#aang_air_scooter" fill="#a1e4ff" fillOpacity={0.51} className="scooter_style"/>
+
           </g>
           <g id="aang_all_air_scooter">
             <g id="group_air_1">
@@ -283,7 +278,7 @@ function AirScooterSVG({colourScheme, size}) {
                 <feComposite in2="SourceAlpha" operator="in" />
                 <feGaussianBlur stdDeviation={3.61} />
                 <feOffset dx={10} dy={10} result="afterOffset" />
-                <feFlood floodColor="#fcf5f5" floodOpacity={0.78} />
+                <feFlood floodColor="#fff" floodOpacity={0.78} />
                 <feComposite in2="afterOffset" operator="in" />
                 <feMorphology operator="dilate" radius={16} />
                 <feComposite in2="SourceAlpha" operator="out" />
@@ -401,7 +396,7 @@ function AirScooterSVG({colourScheme, size}) {
                 <feComposite in2="SourceAlpha" operator="in" />
                 <feGaussianBlur stdDeviation={3.61} />
                 <feOffset dx={10} dy={10} result="afterOffset" />
-                <feFlood floodColor="#fcf5f5" floodOpacity={0.78} />
+                <feFlood floodColor="#fff" floodOpacity={0.78} />
                 <feComposite in2="afterOffset" operator="in" />
                 <feMorphology operator="dilate" radius={16} />
                 <feComposite in2="SourceAlpha" operator="out" />

@@ -11,12 +11,20 @@ const aangColourScheme = {
   collarShadow: "#f0b90a"
 }
 
-const aangSize = 400
+const aangSize = '100vh'
 
+const tempHomePageStyling = {
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center'
+}
 
 const HomePage = () => {
   return (
-    <div className="homepage_container">
+    <div 
+      className="homepage_container"
+      style={tempHomePageStyling}
+    >
       <AirScooterSVG 
         colourScheme = {aangColourScheme}
         size= {aangSize}
