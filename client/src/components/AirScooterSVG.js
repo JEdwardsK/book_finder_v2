@@ -1,28 +1,28 @@
-import * as React from "react"
+import * as React from 'react'
 import PropTypes from 'prop-types'
 import { motion } from 'framer-motion'
 
-function AirScooterSVG({colourScheme, size}) {
+function AirScooterSVG({ colourScheme, size }) {
   const { 
     primary, secondary, boots, 
     skin, tattoos, neckShadow, 
-    collarShadow
+    collarShadow,
   } = colourScheme
 
   const airTransition = (duration = .5, delay = 0) => {
     return {
       ease: 'linear',
-    duration: duration,
-    timeConstant: 0,
-    loop: Infinity,
-    delay: delay
+      duration: duration,
+      timeConstant: 0,
+      loop: Infinity,
+      delay: delay,
     }
   }
 
 
-  const fullMovement = {
-    loop: Infinity,
-  }
+  // const fullMovement = {
+  //   loop: Infinity,
+  // }
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -149,8 +149,12 @@ function AirScooterSVG({colourScheme, size}) {
           d="M265.42 444.01c4.96 60 40.33 113.27 93.7 141.13 2.8 1.46-10-5.22 8.93 4.66 1.94 1.01 4.15-.75 3.6-2.87-7.36-28.36-17.37-66.9-22.07-85a197.634 197.634 0 00-58.13-96.36c-6.32-5.76-13.96-12.73-28.29-25.8-1.18-1.07-3.06-.14-2.93 1.44 2.63 31.84 4.08 49.35 5.19 62.8z"
           id="air_rotate_5"
         />
+        <path
+          d="M308.07 233.78l52.01-3.96 62.78-5.37 2.94-.85c2.12 2.45 3.44 3.97 3.97 4.59a2.37 2.37 0 01-.69 3.66c-1.13.59-3.94 2.07-8.44 4.43l-12.97 3.46-30.5 3.06-11.7.27-4.62-.27-2.81.27-6.45 3.01-4.05 1.65-6.61.2-7.03-.9-2.94-1.28h-1.92l-4.22 1.28-3.7.9-4.74.63-3.71-1.21-4.6-1.6-3.58-1.76-4.09-.92h-3.58l-4.48.92-30.74-2.07-15.79-2.76-13.65-4.48-1.92-4.51 77.83 3.61z"
+          id="aang_arm_shadow"
+        />
       </defs>
-      <g id="aang_full-svg">
+      <g id="aang_full_svg">
         <motion.g
 
           animate={{
@@ -178,21 +182,34 @@ function AirScooterSVG({colourScheme, size}) {
             <use xlinkHref="#aang_foot_right" fill={boots} />
             <use xlinkHref="#aang_knee_right" fill={secondary} />
             <g id="group_head">
-            <use xlinkHref="#aang_neck" fill={skin} />
-            <use xlinkHref="#aang_collar_left" fill={secondary} />
-            <use xlinkHref="#aang_collar_right" fill={secondary} />
-            <use xlinkHref="#aang_neck_shadow" fill={neckShadow} />
+              <use xlinkHref="#aang_neck" fill={skin} />
+              <use xlinkHref="#aang_collar_left" fill={secondary} />
+              <use xlinkHref="#aang_collar_right" fill={secondary} />
+              <use xlinkHref="#aang_neck_shadow" fill={neckShadow} />
               <use xlinkHref="#aang_head" fill={skin} />
-              <use xlinkHref="#aang_head_tattoo" fill={tattoos} />
+              <use 
+                xlinkHref="#aang_head_tattoo" 
+                fill={tattoos}
+                className="aang_avatar_state" 
+              />
             </g>
+            <use xlinkHref="#aang_arm_shadow" fill="#144a5f" fillOpacity={0.23}/>
             <g id="group_arm_left">
               <use xlinkHref="#aang_hand_left" fill={skin} />
-              <use xlinkHref="#aang_hand_tat_left" fill={tattoos} />
+              <use 
+                xlinkHref="#aang_hand_tat_left" 
+                fill={tattoos}
+                className="aang_avatar_state" 
+              />
               <use xlinkHref="#aang_arm_left" fill={secondary} />
             </g>
             <g id="group_arm_right">
               <use xlinkHref="#aang_hand_right" fill={skin} />
-              <use xlinkHref="#aang_hand_tat_right" fill={tattoos} />
+              <use 
+                xlinkHref="#aang_hand_tat_right" 
+                fill={tattoos}
+                className="aang_avatar_state" 
+              />
               <use xlinkHref="#aang_arm_right" fill={secondary} />
             </g>  
             <use xlinkHref="#aang_air_scooter" fill="#a1e4ff" fillOpacity={0.51} className="scooter_style"/>
@@ -202,62 +219,62 @@ function AirScooterSVG({colourScheme, size}) {
             <g id="group_air_1">
               <motion.g 
                 animate={{
-                  rotate: 360
+                  rotate: 360,
                 }}
                 // transition={airTransition()}
               >
-              <filter
-                id="prefix__shadow10191219"
-                x={140.9}
-                y={401.34}
-                width={359.91}
-                height={189.92}
-                filterUnits="userSpaceOnUse"
-                primitiveUnits="userSpaceOnUse"
-              >
-                <feFlood />
-                <feComposite in2="SourceAlpha" operator="in" />
-                <feGaussianBlur stdDeviation={3.61} />
-                <feOffset dx={10} dy={10} result="afterOffset" />
-                <feFlood floodColor="#fff" floodOpacity={0.78} />
-                <feComposite in2="afterOffset" operator="in" />
-                <feMorphology operator="dilate" radius={16} />
-                <feComposite in2="SourceAlpha" operator="out" />
-              </filter>
-              <path
-                d="M259.3 516.34c57.49 17.88 120.14 5.04 165.96-34.02 2.4-2.04-8.59 7.33 7.66-6.53 1.66-1.41.86-4.13-1.31-4.41-29.05-3.8-68.53-8.96-87.07-11.38a197.642 197.642 0 00-111.13 17.8c-7.7 3.7-17.03 8.18-34.52 16.57-1.43.69-1.28 2.78.24 3.25 30.51 9.49 47.29 14.71 60.17 18.72z"
-                id="air_rotate_use_1"
-                fill="#fff"
-                fillOpacity={1}
-                filter="url(#prefix__shadow10191219)"
-              />
-              <g>
                 <filter
-                  id="prefix__shadow5325172"
-                  x={154.9}
-                  y={415.34}
-                  width={331.91}
-                  height={161.92}
+                  id="prefix__shadow10191219"
+                  x={140.9}
+                  y={401.34}
+                  width={359.91}
+                  height={189.92}
                   filterUnits="userSpaceOnUse"
                   primitiveUnits="userSpaceOnUse"
                 >
                   <feFlood />
-                  <feComposite in2="SourceAlpha" operator="out" />
-                  <feGaussianBlur stdDeviation={3.46} />
-                  <feOffset dx={10} dy={10} result="afterOffset" />
-                  <feFlood floodColor="#fff" floodOpacity={0.8} />
-                  <feComposite in2="afterOffset" operator="in" />
-                  <feMorphology operator="dilate" radius={4} />
                   <feComposite in2="SourceAlpha" operator="in" />
+                  <feGaussianBlur stdDeviation={3.61} />
+                  <feOffset dx={10} dy={10} result="afterOffset" />
+                  <feFlood floodColor="#fff" floodOpacity={0.78} />
+                  <feComposite in2="afterOffset" operator="in" />
+                  <feMorphology operator="dilate" radius={16} />
+                  <feComposite in2="SourceAlpha" operator="out" />
                 </filter>
                 <path
                   d="M259.3 516.34c57.49 17.88 120.14 5.04 165.96-34.02 2.4-2.04-8.59 7.33 7.66-6.53 1.66-1.41.86-4.13-1.31-4.41-29.05-3.8-68.53-8.96-87.07-11.38a197.642 197.642 0 00-111.13 17.8c-7.7 3.7-17.03 8.18-34.52 16.57-1.43.69-1.28 2.78.24 3.25 30.51 9.49 47.29 14.71 60.17 18.72z"
-                  id="air_rotate_use_2"
+                  id="air_rotate_use_1"
                   fill="#fff"
                   fillOpacity={1}
-                  filter="url(#prefix__shadow5325172)"
+                  filter="url(#prefix__shadow10191219)"
                 />
-              </g>
+                <g>
+                  <filter
+                    id="prefix__shadow5325172"
+                    x={154.9}
+                    y={415.34}
+                    width={331.91}
+                    height={161.92}
+                    filterUnits="userSpaceOnUse"
+                    primitiveUnits="userSpaceOnUse"
+                  >
+                    <feFlood />
+                    <feComposite in2="SourceAlpha" operator="out" />
+                    <feGaussianBlur stdDeviation={3.46} />
+                    <feOffset dx={10} dy={10} result="afterOffset" />
+                    <feFlood floodColor="#fff" floodOpacity={0.8} />
+                    <feComposite in2="afterOffset" operator="in" />
+                    <feMorphology operator="dilate" radius={4} />
+                    <feComposite in2="SourceAlpha" operator="in" />
+                  </filter>
+                  <path
+                    d="M259.3 516.34c57.49 17.88 120.14 5.04 165.96-34.02 2.4-2.04-8.59 7.33 7.66-6.53 1.66-1.41.86-4.13-1.31-4.41-29.05-3.8-68.53-8.96-87.07-11.38a197.642 197.642 0 00-111.13 17.8c-7.7 3.7-17.03 8.18-34.52 16.57-1.43.69-1.28 2.78.24 3.25 30.51 9.49 47.29 14.71 60.17 18.72z"
+                    id="air_rotate_use_2"
+                    fill="#fff"
+                    fillOpacity={1}
+                    filter="url(#prefix__shadow5325172)"
+                  />
+                </g>
               </motion.g>
             </g>
             <g id="group_air_2">
@@ -265,58 +282,58 @@ function AirScooterSVG({colourScheme, size}) {
               // animate={{rotateX: -360}}
               // transition={airTransition(1)}
               >
-              <filter
-                id="prefix__shadow6219504"
-                x={156.5}
-                y={364.64}
-                width={328.65}
-                height={247.87}
-                filterUnits="userSpaceOnUse"
-                primitiveUnits="userSpaceOnUse"
-              >
-                <feFlood />
-                <feComposite in2="SourceAlpha" operator="in" />
-                <feGaussianBlur stdDeviation={3.61} />
-                <feOffset dx={10} dy={10} result="afterOffset" />
-                <feFlood floodColor="#fff" floodOpacity={0.78} />
-                <feComposite in2="afterOffset" operator="in" />
-                <feMorphology operator="dilate" radius={16} />
-                <feComposite in2="SourceAlpha" operator="out" />
-              </filter>
-              <path
-                d="M251.53 474.95c36.01 48.25 94.23 74.69 154.26 70.03 3.14-.25-11.25.87 10.04-.78 2.18-.17 3.12-2.84 1.54-4.34-21.28-20.15-50.19-47.53-63.77-60.39a197.646 197.646 0 00-100.36-50.92c-8.41-1.53-18.58-3.39-37.66-6.88-1.57-.29-2.68 1.5-1.72 2.77 19.1 25.61 29.61 39.69 37.67 50.51z"
-                id="air_rotate_use_3"
-                fill="#fff"
-                fillOpacity={1}
-                filter="url(#prefix__shadow6219504)"
-              />
-              <g>
                 <filter
-                  id="prefix__shadow6461550"
-                  x={170.5}
-                  y={378.64}
-                  width={300.65}
-                  height={219.87}
+                  id="prefix__shadow6219504"
+                  x={156.5}
+                  y={364.64}
+                  width={328.65}
+                  height={247.87}
                   filterUnits="userSpaceOnUse"
                   primitiveUnits="userSpaceOnUse"
                 >
                   <feFlood />
-                  <feComposite in2="SourceAlpha" operator="out" />
-                  <feGaussianBlur stdDeviation={3.46} />
-                  <feOffset dx={10} dy={10} result="afterOffset" />
-                  <feFlood floodColor="#fff" floodOpacity={0.8} />
-                  <feComposite in2="afterOffset" operator="in" />
-                  <feMorphology operator="dilate" radius={4} />
                   <feComposite in2="SourceAlpha" operator="in" />
+                  <feGaussianBlur stdDeviation={3.61} />
+                  <feOffset dx={10} dy={10} result="afterOffset" />
+                  <feFlood floodColor="#fff" floodOpacity={0.78} />
+                  <feComposite in2="afterOffset" operator="in" />
+                  <feMorphology operator="dilate" radius={16} />
+                  <feComposite in2="SourceAlpha" operator="out" />
                 </filter>
                 <path
                   d="M251.53 474.95c36.01 48.25 94.23 74.69 154.26 70.03 3.14-.25-11.25.87 10.04-.78 2.18-.17 3.12-2.84 1.54-4.34-21.28-20.15-50.19-47.53-63.77-60.39a197.646 197.646 0 00-100.36-50.92c-8.41-1.53-18.58-3.39-37.66-6.88-1.57-.29-2.68 1.5-1.72 2.77 19.1 25.61 29.61 39.69 37.67 50.51z"
-                  id="air_rotate_use_4"
+                  id="air_rotate_use_3"
                   fill="#fff"
                   fillOpacity={1}
-                  filter="url(#prefix__shadow6461550)"
+                  filter="url(#prefix__shadow6219504)"
                 />
-              </g>
+                <g>
+                  <filter
+                    id="prefix__shadow6461550"
+                    x={170.5}
+                    y={378.64}
+                    width={300.65}
+                    height={219.87}
+                    filterUnits="userSpaceOnUse"
+                    primitiveUnits="userSpaceOnUse"
+                  >
+                    <feFlood />
+                    <feComposite in2="SourceAlpha" operator="out" />
+                    <feGaussianBlur stdDeviation={3.46} />
+                    <feOffset dx={10} dy={10} result="afterOffset" />
+                    <feFlood floodColor="#fff" floodOpacity={0.8} />
+                    <feComposite in2="afterOffset" operator="in" />
+                    <feMorphology operator="dilate" radius={4} />
+                    <feComposite in2="SourceAlpha" operator="in" />
+                  </filter>
+                  <path
+                    d="M251.53 474.95c36.01 48.25 94.23 74.69 154.26 70.03 3.14-.25-11.25.87 10.04-.78 2.18-.17 3.12-2.84 1.54-4.34-21.28-20.15-50.19-47.53-63.77-60.39a197.646 197.646 0 00-100.36-50.92c-8.41-1.53-18.58-3.39-37.66-6.88-1.57-.29-2.68 1.5-1.72 2.77 19.1 25.61 29.61 39.69 37.67 50.51z"
+                    id="air_rotate_use_4"
+                    fill="#fff"
+                    fillOpacity={1}
+                    filter="url(#prefix__shadow6461550)"
+                  />
+                </g>
               </motion.g>
             </g>
             <g id="group_air_3">
@@ -324,58 +341,58 @@ function AirScooterSVG({colourScheme, size}) {
                 // animate={{ rotateY: 360 }}
                 // transition={airTransition(1)}
               >
-              <filter
-                id="prefix__shadow5465067"
-                x={214.43}
-                y={317.53}
-                width={220.84}
-                height={344.69}
-                filterUnits="userSpaceOnUse"
-                primitiveUnits="userSpaceOnUse"
-              >
-                <feFlood />
-                <feComposite in2="SourceAlpha" operator="in" />
-                <feGaussianBlur stdDeviation={3.61} />
-                <feOffset dx={10} dy={10} result="afterOffset" />
-                <feFlood floodColor="#fff" floodOpacity={0.78} />
-                <feComposite in2="afterOffset" operator="in" />
-                <feMorphology operator="dilate" radius={16} />
-                <feComposite in2="SourceAlpha" operator="out" />
-              </filter>
-              <path
-                d="M318.43 549.56c42.03-43.1 59.03-104.75 45.04-163.31-.74-3.06 2.62 10.98-2.34-9.79-.51-2.12-3.3-2.64-4.53-.84-16.58 24.17-39.1 57-49.67 72.42a197.563 197.563 0 00-34.59 107.1c-.21 8.54-.45 18.88-.91 38.28-.04 1.59 1.9 2.4 3.01 1.26 22.3-22.87 34.57-35.45 43.99-45.12z"
-                id="air_rotate_use_5"
-                fill="#fff"
-                fillOpacity={1}
-                filter="url(#prefix__shadow5465067)"
-              />
-              <g>
                 <filter
-                  id="prefix__shadow4687059"
-                  x={228.43}
-                  y={331.53}
-                  width={192.84}
-                  height={316.69}
+                  id="prefix__shadow5465067"
+                  x={214.43}
+                  y={317.53}
+                  width={220.84}
+                  height={344.69}
                   filterUnits="userSpaceOnUse"
                   primitiveUnits="userSpaceOnUse"
                 >
                   <feFlood />
-                  <feComposite in2="SourceAlpha" operator="out" />
-                  <feGaussianBlur stdDeviation={3.46} />
-                  <feOffset dx={10} dy={10} result="afterOffset" />
-                  <feFlood floodColor="#fff" floodOpacity={0.8} />
-                  <feComposite in2="afterOffset" operator="in" />
-                  <feMorphology operator="dilate" radius={4} />
                   <feComposite in2="SourceAlpha" operator="in" />
+                  <feGaussianBlur stdDeviation={3.61} />
+                  <feOffset dx={10} dy={10} result="afterOffset" />
+                  <feFlood floodColor="#fff" floodOpacity={0.78} />
+                  <feComposite in2="afterOffset" operator="in" />
+                  <feMorphology operator="dilate" radius={16} />
+                  <feComposite in2="SourceAlpha" operator="out" />
                 </filter>
                 <path
                   d="M318.43 549.56c42.03-43.1 59.03-104.75 45.04-163.31-.74-3.06 2.62 10.98-2.34-9.79-.51-2.12-3.3-2.64-4.53-.84-16.58 24.17-39.1 57-49.67 72.42a197.563 197.563 0 00-34.59 107.1c-.21 8.54-.45 18.88-.91 38.28-.04 1.59 1.9 2.4 3.01 1.26 22.3-22.87 34.57-35.45 43.99-45.12z"
-                  id="prefix__d3jkP5w666"
+                  id="air_rotate_use_5"
                   fill="#fff"
                   fillOpacity={1}
-                  filter="url(#prefix__shadow4687059)"
+                  filter="url(#prefix__shadow5465067)"
                 />
-              </g>
+                <g>
+                  <filter
+                    id="prefix__shadow4687059"
+                    x={228.43}
+                    y={331.53}
+                    width={192.84}
+                    height={316.69}
+                    filterUnits="userSpaceOnUse"
+                    primitiveUnits="userSpaceOnUse"
+                  >
+                    <feFlood />
+                    <feComposite in2="SourceAlpha" operator="out" />
+                    <feGaussianBlur stdDeviation={3.46} />
+                    <feOffset dx={10} dy={10} result="afterOffset" />
+                    <feFlood floodColor="#fff" floodOpacity={0.8} />
+                    <feComposite in2="afterOffset" operator="in" />
+                    <feMorphology operator="dilate" radius={4} />
+                    <feComposite in2="SourceAlpha" operator="in" />
+                  </filter>
+                  <path
+                    d="M318.43 549.56c42.03-43.1 59.03-104.75 45.04-163.31-.74-3.06 2.62 10.98-2.34-9.79-.51-2.12-3.3-2.64-4.53-.84-16.58 24.17-39.1 57-49.67 72.42a197.563 197.563 0 00-34.59 107.1c-.21 8.54-.45 18.88-.91 38.28-.04 1.59 1.9 2.4 3.01 1.26 22.3-22.87 34.57-35.45 43.99-45.12z"
+                    id="prefix__d3jkP5w666"
+                    fill="#fff"
+                    fillOpacity={1}
+                    filter="url(#prefix__shadow4687059)"
+                  />
+                </g>
               </ motion.g>
             </g>
             <g id="group_air_4">
@@ -383,59 +400,59 @@ function AirScooterSVG({colourScheme, size}) {
                 // animate={{ rotateZ: -360 }}
                 // transition={airTransition(1)}
               >
-              <filter
-                id="prefix__shadow1335898"
-                x={159.72}
-                y={361.42}
-                width={322.44}
-                height={256.52}
-                filterUnits="userSpaceOnUse"
-                primitiveUnits="userSpaceOnUse"
-              >
-                <feFlood />
-                <feComposite in2="SourceAlpha" operator="in" />
-                <feGaussianBlur stdDeviation={3.61} />
-                <feOffset dx={10} dy={10} result="afterOffset" />
-                <feFlood floodColor="#fff" floodOpacity={0.78} />
-                <feComposite in2="afterOffset" operator="in" />
-                <feMorphology operator="dilate" radius={16} />
-                <feComposite in2="SourceAlpha" operator="out" />
-              </filter>
-              <path
-                d="M351.17 430.18c-59.16 11.2-108.44 51.94-130.57 107.94-1.15 2.93 4.15-10.5-3.7 9.36-.8 2.03 1.19 4.06 3.23 3.29 27.44-10.29 64.72-24.27 82.23-30.84a197.647 197.647 0 0089.76-67.88c5.07-6.89 11.2-15.22 22.7-30.84.94-1.28-.18-3.05-1.74-2.76-31.39 5.95-48.65 9.22-61.91 11.73z"
-                id="prefix__a4wocMrwi"
-                fill="#fff"
-                fillOpacity={1}
-                filter="url(#prefix__shadow1335898)"
-              />
-              <g>
                 <filter
-                  id="prefix__shadow6695390"
-                  x={173.72}
-                  y={375.42}
-                  width={294.44}
-                  height={228.52}
+                  id="prefix__shadow1335898"
+                  x={159.72}
+                  y={361.42}
+                  width={322.44}
+                  height={256.52}
                   filterUnits="userSpaceOnUse"
                   primitiveUnits="userSpaceOnUse"
                 >
                   <feFlood />
-                  <feComposite in2="SourceAlpha" operator="out" />
-                  <feGaussianBlur stdDeviation={3.46} />
-                  <feOffset dx={10} dy={10} result="afterOffset" />
-                  <feFlood floodColor="#fff" floodOpacity={0.8} />
-                  <feComposite in2="afterOffset" operator="in" />
-                  <feMorphology operator="dilate" radius={4} />
                   <feComposite in2="SourceAlpha" operator="in" />
+                  <feGaussianBlur stdDeviation={3.61} />
+                  <feOffset dx={10} dy={10} result="afterOffset" />
+                  <feFlood floodColor="#fff" floodOpacity={0.78} />
+                  <feComposite in2="afterOffset" operator="in" />
+                  <feMorphology operator="dilate" radius={16} />
+                  <feComposite in2="SourceAlpha" operator="out" />
                 </filter>
                 <path
                   d="M351.17 430.18c-59.16 11.2-108.44 51.94-130.57 107.94-1.15 2.93 4.15-10.5-3.7 9.36-.8 2.03 1.19 4.06 3.23 3.29 27.44-10.29 64.72-24.27 82.23-30.84a197.647 197.647 0 0089.76-67.88c5.07-6.89 11.2-15.22 22.7-30.84.94-1.28-.18-3.05-1.74-2.76-31.39 5.95-48.65 9.22-61.91 11.73z"
-                  id="prefix__d4bNEuXjSt"
+                  id="prefix__a4wocMrwi"
                   fill="#fff"
                   fillOpacity={1}
-                  filter="url(#prefix__shadow6695390)"
+                  filter="url(#prefix__shadow1335898)"
                 />
-              </g>
-            </motion.g>
+                <g>
+                  <filter
+                    id="prefix__shadow6695390"
+                    x={173.72}
+                    y={375.42}
+                    width={294.44}
+                    height={228.52}
+                    filterUnits="userSpaceOnUse"
+                    primitiveUnits="userSpaceOnUse"
+                  >
+                    <feFlood />
+                    <feComposite in2="SourceAlpha" operator="out" />
+                    <feGaussianBlur stdDeviation={3.46} />
+                    <feOffset dx={10} dy={10} result="afterOffset" />
+                    <feFlood floodColor="#fff" floodOpacity={0.8} />
+                    <feComposite in2="afterOffset" operator="in" />
+                    <feMorphology operator="dilate" radius={4} />
+                    <feComposite in2="SourceAlpha" operator="in" />
+                  </filter>
+                  <path
+                    d="M351.17 430.18c-59.16 11.2-108.44 51.94-130.57 107.94-1.15 2.93 4.15-10.5-3.7 9.36-.8 2.03 1.19 4.06 3.23 3.29 27.44-10.29 64.72-24.27 82.23-30.84a197.647 197.647 0 0089.76-67.88c5.07-6.89 11.2-15.22 22.7-30.84.94-1.28-.18-3.05-1.74-2.76-31.39 5.95-48.65 9.22-61.91 11.73z"
+                    id="prefix__d4bNEuXjSt"
+                    fill="#fff"
+                    fillOpacity={1}
+                    filter="url(#prefix__shadow6695390)"
+                  />
+                </g>
+              </motion.g>
             </g>
             <g id="group_air_5">
               <filter
@@ -493,246 +510,246 @@ function AirScooterSVG({colourScheme, size}) {
             </g>
             <g id="group_air_6">
               <motion.g
-                animate={{rotateX: 360}}
+                animate={{ rotateX: 360 }}
                 transition={airTransition(1)}
               >
-              <filter
-                id="prefix__shadow2881941"
-                x={181.13}
-                y={348.4}
-                width={280.7}
-                height={280.7}
-                filterUnits="userSpaceOnUse"
-                primitiveUnits="userSpaceOnUse"
-              >
-                <feFlood />
-                <feComposite in2="SourceAlpha" operator="in" />
-                <feGaussianBlur stdDeviation={3.46} />
-                <feOffset result="afterOffset" />
-                <feFlood floodColor="#fff" floodOpacity={1} />
-                <feComposite in2="afterOffset" operator="in" />
-                <feMorphology operator="dilate" radius={10} />
-                <feComposite in2="SourceAlpha" operator="out" />
-              </filter>
-              <path
-                d="M422.82 488.75c0 55.93-45.41 101.34-101.34 101.34-55.94 0-101.35-45.41-101.35-101.34 0-55.94 45.41-101.35 101.35-101.35 55.93 0 101.34 45.41 101.34 101.35z"
-                id="prefix__dzqeNIxOt"
-                fill="#fff"
-                fillOpacity={1}
-                filter="url(#prefix__shadow2881941)"
-              />
-              <g>
                 <filter
-                  id="prefix__shadow5863355"
-                  x={183.13}
-                  y={350.4}
-                  width={276.7}
-                  height={276.7}
+                  id="prefix__shadow2881941"
+                  x={181.13}
+                  y={348.4}
+                  width={280.7}
+                  height={280.7}
                   filterUnits="userSpaceOnUse"
                   primitiveUnits="userSpaceOnUse"
                 >
                   <feFlood />
-                  <feComposite in2="SourceAlpha" operator="out" />
+                  <feComposite in2="SourceAlpha" operator="in" />
                   <feGaussianBlur stdDeviation={3.46} />
                   <feOffset result="afterOffset" />
-                  <feFlood floodColor="#fff" floodOpacity={0.8} />
+                  <feFlood floodColor="#fff" floodOpacity={1} />
                   <feComposite in2="afterOffset" operator="in" />
-                  <feMorphology operator="dilate" radius={8} />
-                  <feComposite in2="SourceAlpha" operator="in" />
+                  <feMorphology operator="dilate" radius={10} />
+                  <feComposite in2="SourceAlpha" operator="out" />
                 </filter>
                 <path
                   d="M422.82 488.75c0 55.93-45.41 101.34-101.34 101.34-55.94 0-101.35-45.41-101.35-101.34 0-55.94 45.41-101.35 101.35-101.35 55.93 0 101.34 45.41 101.34 101.35z"
-                  id="prefix__aOs7VVQBO"
+                  id="prefix__dzqeNIxOt"
                   fill="#fff"
                   fillOpacity={1}
-                  filter="url(#prefix__shadow5863355)"
+                  filter="url(#prefix__shadow2881941)"
                 />
-              </g>
-                </motion.g>
-              </g>
+                <g>
+                  <filter
+                    id="prefix__shadow5863355"
+                    x={183.13}
+                    y={350.4}
+                    width={276.7}
+                    height={276.7}
+                    filterUnits="userSpaceOnUse"
+                    primitiveUnits="userSpaceOnUse"
+                  >
+                    <feFlood />
+                    <feComposite in2="SourceAlpha" operator="out" />
+                    <feGaussianBlur stdDeviation={3.46} />
+                    <feOffset result="afterOffset" />
+                    <feFlood floodColor="#fff" floodOpacity={0.8} />
+                    <feComposite in2="afterOffset" operator="in" />
+                    <feMorphology operator="dilate" radius={8} />
+                    <feComposite in2="SourceAlpha" operator="in" />
+                  </filter>
+                  <path
+                    d="M422.82 488.75c0 55.93-45.41 101.34-101.34 101.34-55.94 0-101.35-45.41-101.35-101.34 0-55.94 45.41-101.35 101.35-101.35 55.93 0 101.34 45.41 101.34 101.35z"
+                    id="prefix__aOs7VVQBO"
+                    fill="#fff"
+                    fillOpacity={1}
+                    filter="url(#prefix__shadow5863355)"
+                  />
+                </g>
+              </motion.g>
+            </g>
             <g id="group_air_7">
               <motion.g
-                animate={{rotateY: 360}}
+                animate={{ rotateY: 360 }}
                 transition={
                   airTransition(1, .5)
                   
                 }
               >
-              <filter
-                id="prefix__shadow2881941"
-                x={181.13}
-                y={348.4}
-                width={280.7}
-                height={280.7}
-                filterUnits="userSpaceOnUse"
-                primitiveUnits="userSpaceOnUse"
-              >
-                <feFlood />
-                <feComposite in2="SourceAlpha" operator="in" />
-                <feGaussianBlur stdDeviation={3.46} />
-                <feOffset result="afterOffset" />
-                <feFlood floodColor="#fff" floodOpacity={1} />
-                <feComposite in2="afterOffset" operator="in" />
-                <feMorphology operator="dilate" radius={10} />
-                <feComposite in2="SourceAlpha" operator="out" />
-              </filter>
-              <path
-                d="M422.82 488.75c0 55.93-45.41 101.34-101.34 101.34-55.94 0-101.35-45.41-101.35-101.34 0-55.94 45.41-101.35 101.35-101.35 55.93 0 101.34 45.41 101.34 101.35z"
-                id="prefix__dzqeNIxOt"
-                fill="#fff"
-                fillOpacity={1}
-                filter="url(#prefix__shadow2881941)"
-              />
-              <g>
                 <filter
-                  id="prefix__shadow5863355"
-                  x={183.13}
-                  y={350.4}
-                  width={276.7}
-                  height={276.7}
+                  id="prefix__shadow2881941"
+                  x={181.13}
+                  y={348.4}
+                  width={280.7}
+                  height={280.7}
                   filterUnits="userSpaceOnUse"
                   primitiveUnits="userSpaceOnUse"
                 >
                   <feFlood />
-                  <feComposite in2="SourceAlpha" operator="out" />
+                  <feComposite in2="SourceAlpha" operator="in" />
                   <feGaussianBlur stdDeviation={3.46} />
                   <feOffset result="afterOffset" />
-                  <feFlood floodColor="#fff" floodOpacity={0.8} />
+                  <feFlood floodColor="#fff" floodOpacity={1} />
                   <feComposite in2="afterOffset" operator="in" />
-                  <feMorphology operator="dilate" radius={8} />
-                  <feComposite in2="SourceAlpha" operator="in" />
+                  <feMorphology operator="dilate" radius={10} />
+                  <feComposite in2="SourceAlpha" operator="out" />
                 </filter>
                 <path
                   d="M422.82 488.75c0 55.93-45.41 101.34-101.34 101.34-55.94 0-101.35-45.41-101.35-101.34 0-55.94 45.41-101.35 101.35-101.35 55.93 0 101.34 45.41 101.34 101.35z"
-                  id="prefix__aOs7VVQBO"
+                  id="prefix__dzqeNIxOt"
                   fill="#fff"
                   fillOpacity={1}
-                  filter="url(#prefix__shadow5863355)"
+                  filter="url(#prefix__shadow2881941)"
                 />
-              </g>
-                </motion.g>
-              </g>
+                <g>
+                  <filter
+                    id="prefix__shadow5863355"
+                    x={183.13}
+                    y={350.4}
+                    width={276.7}
+                    height={276.7}
+                    filterUnits="userSpaceOnUse"
+                    primitiveUnits="userSpaceOnUse"
+                  >
+                    <feFlood />
+                    <feComposite in2="SourceAlpha" operator="out" />
+                    <feGaussianBlur stdDeviation={3.46} />
+                    <feOffset result="afterOffset" />
+                    <feFlood floodColor="#fff" floodOpacity={0.8} />
+                    <feComposite in2="afterOffset" operator="in" />
+                    <feMorphology operator="dilate" radius={8} />
+                    <feComposite in2="SourceAlpha" operator="in" />
+                  </filter>
+                  <path
+                    d="M422.82 488.75c0 55.93-45.41 101.34-101.34 101.34-55.94 0-101.35-45.41-101.35-101.34 0-55.94 45.41-101.35 101.35-101.35 55.93 0 101.34 45.41 101.34 101.35z"
+                    id="prefix__aOs7VVQBO"
+                    fill="#fff"
+                    fillOpacity={1}
+                    filter="url(#prefix__shadow5863355)"
+                  />
+                </g>
+              </motion.g>
+            </g>
             <g id="group_air_8">
               <motion.g
-                style={{ rotate:45}}
-                animate={{rotateY: 360}}
+                style={{ rotate: 45 }}
+                animate={{ rotateY: 360 }}
                 transition={airTransition(1, .4)}
               >
-              <filter
-                id="prefix__shadow2881941"
-                x={181.13}
-                y={348.4}
-                width={280.7}
-                height={280.7}
-                filterUnits="userSpaceOnUse"
-                primitiveUnits="userSpaceOnUse"
-              >
-                <feFlood />
-                <feComposite in2="SourceAlpha" operator="in" />
-                <feGaussianBlur stdDeviation={3.46} />
-                <feOffset result="afterOffset" />
-                <feFlood floodColor="#fff" floodOpacity={1} />
-                <feComposite in2="afterOffset" operator="in" />
-                <feMorphology operator="dilate" radius={10} />
-                <feComposite in2="SourceAlpha" operator="out" />
-              </filter>
-              <path
-                d="M422.82 488.75c0 55.93-45.41 101.34-101.34 101.34-55.94 0-101.35-45.41-101.35-101.34 0-55.94 45.41-101.35 101.35-101.35 55.93 0 101.34 45.41 101.34 101.35z"
-                id="prefix__dzqeNIxOt"
-                fill="#fff"
-                fillOpacity={1}
-                filter="url(#prefix__shadow2881941)"
-              />
-              <g>
                 <filter
-                  id="prefix__shadow5863355"
-                  x={183.13}
-                  y={350.4}
-                  width={276.7}
-                  height={276.7}
+                  id="prefix__shadow2881941"
+                  x={181.13}
+                  y={348.4}
+                  width={280.7}
+                  height={280.7}
                   filterUnits="userSpaceOnUse"
                   primitiveUnits="userSpaceOnUse"
                 >
                   <feFlood />
-                  <feComposite in2="SourceAlpha" operator="out" />
+                  <feComposite in2="SourceAlpha" operator="in" />
                   <feGaussianBlur stdDeviation={3.46} />
                   <feOffset result="afterOffset" />
-                  <feFlood floodColor="#fff" floodOpacity={0.8} />
+                  <feFlood floodColor="#fff" floodOpacity={1} />
                   <feComposite in2="afterOffset" operator="in" />
-                  <feMorphology operator="dilate" radius={8} />
-                  <feComposite in2="SourceAlpha" operator="in" />
+                  <feMorphology operator="dilate" radius={10} />
+                  <feComposite in2="SourceAlpha" operator="out" />
                 </filter>
                 <path
                   d="M422.82 488.75c0 55.93-45.41 101.34-101.34 101.34-55.94 0-101.35-45.41-101.35-101.34 0-55.94 45.41-101.35 101.35-101.35 55.93 0 101.34 45.41 101.34 101.35z"
-                  id="prefix__aOs7VVQBO"
+                  id="prefix__dzqeNIxOt"
                   fill="#fff"
                   fillOpacity={1}
-                  filter="url(#prefix__shadow5863355)"
+                  filter="url(#prefix__shadow2881941)"
                 />
-              </g>
-                </motion.g>
-              </g>
-            <g id="group_air_9">
-            <motion.g
-              animate={{rotateZ: 360}}
-              transition={airTransition(.6)}
-            >
-            <filter
-              id="prefix__shadow2881941"
-              x={181.13}
-              y={348.4}
-              width={280.7}
-              height={280.7}
-              filterUnits="userSpaceOnUse"
-              primitiveUnits="userSpaceOnUse"
-            >
-              <feFlood />
-              <feComposite in2="SourceAlpha" operator="in" />
-              <feGaussianBlur stdDeviation={3.46} />
-              <feOffset result="afterOffset" />
-              <feFlood floodColor="#fff" floodOpacity={1} />
-              <feComposite in2="afterOffset" operator="in" />
-              <feMorphology operator="dilate" radius={10} />
-              <feComposite in2="SourceAlpha" operator="out" />
-            </filter>
-            <path
-              d="M422.82 488.75c0 55.93-45.41 101.34-101.34 101.34-55.94 0-101.35-45.41-101.35-101.34 0-55.94 45.41-101.35 101.35-101.35 55.93 0 101.34 45.41 101.34 101.35z"
-              id="prefix__dzqeNIxOt"
-              fill="#fff"
-              fillOpacity={1}
-              filter="url(#prefix__shadow2881941)"
-            />
-            <g>
-              <filter
-                id="prefix__shadow5863355"
-                x={183.13}
-                y={350.4}
-                width={276.7}
-                height={276.7}
-                filterUnits="userSpaceOnUse"
-                primitiveUnits="userSpaceOnUse"
-              >
-                <feFlood />
-                <feComposite in2="SourceAlpha" operator="out" />
-                <feGaussianBlur stdDeviation={3.46} />
-                <feOffset result="afterOffset" />
-                <feFlood floodColor="#fff" floodOpacity={0.8} />
-                <feComposite in2="afterOffset" operator="in" />
-                <feMorphology operator="dilate" radius={8} />
-                <feComposite in2="SourceAlpha" operator="in" />
-              </filter>
-              <path
-                d="M422.82 488.75c0 55.93-45.41 101.34-101.34 101.34-55.94 0-101.35-45.41-101.35-101.34 0-55.94 45.41-101.35 101.35-101.35 55.93 0 101.34 45.41 101.34 101.35z"
-                id="prefix__aOs7VVQBO"
-                fill="#fff"
-                fillOpacity={1}
-                filter="url(#prefix__shadow5863355)"
-              />
-            </g>
+                <g>
+                  <filter
+                    id="prefix__shadow5863355"
+                    x={183.13}
+                    y={350.4}
+                    width={276.7}
+                    height={276.7}
+                    filterUnits="userSpaceOnUse"
+                    primitiveUnits="userSpaceOnUse"
+                  >
+                    <feFlood />
+                    <feComposite in2="SourceAlpha" operator="out" />
+                    <feGaussianBlur stdDeviation={3.46} />
+                    <feOffset result="afterOffset" />
+                    <feFlood floodColor="#fff" floodOpacity={0.8} />
+                    <feComposite in2="afterOffset" operator="in" />
+                    <feMorphology operator="dilate" radius={8} />
+                    <feComposite in2="SourceAlpha" operator="in" />
+                  </filter>
+                  <path
+                    d="M422.82 488.75c0 55.93-45.41 101.34-101.34 101.34-55.94 0-101.35-45.41-101.35-101.34 0-55.94 45.41-101.35 101.35-101.35 55.93 0 101.34 45.41 101.34 101.35z"
+                    id="prefix__aOs7VVQBO"
+                    fill="#fff"
+                    fillOpacity={1}
+                    filter="url(#prefix__shadow5863355)"
+                  />
+                </g>
               </motion.g>
-              </g>
+            </g>
+            <g id="group_air_9">
+              <motion.g
+                animate={{ rotateZ: 360 }}
+                transition={airTransition(.6)}
+              >
+                <filter
+                  id="prefix__shadow2881941"
+                  x={181.13}
+                  y={348.4}
+                  width={280.7}
+                  height={280.7}
+                  filterUnits="userSpaceOnUse"
+                  primitiveUnits="userSpaceOnUse"
+                >
+                  <feFlood />
+                  <feComposite in2="SourceAlpha" operator="in" />
+                  <feGaussianBlur stdDeviation={3.46} />
+                  <feOffset result="afterOffset" />
+                  <feFlood floodColor="#fff" floodOpacity={1} />
+                  <feComposite in2="afterOffset" operator="in" />
+                  <feMorphology operator="dilate" radius={10} />
+                  <feComposite in2="SourceAlpha" operator="out" />
+                </filter>
+                <path
+                  d="M422.82 488.75c0 55.93-45.41 101.34-101.34 101.34-55.94 0-101.35-45.41-101.35-101.34 0-55.94 45.41-101.35 101.35-101.35 55.93 0 101.34 45.41 101.34 101.35z"
+                  id="prefix__dzqeNIxOt"
+                  fill="#fff"
+                  fillOpacity={1}
+                  filter="url(#prefix__shadow2881941)"
+                />
+                <g>
+                  <filter
+                    id="prefix__shadow5863355"
+                    x={183.13}
+                    y={350.4}
+                    width={276.7}
+                    height={276.7}
+                    filterUnits="userSpaceOnUse"
+                    primitiveUnits="userSpaceOnUse"
+                  >
+                    <feFlood />
+                    <feComposite in2="SourceAlpha" operator="out" />
+                    <feGaussianBlur stdDeviation={3.46} />
+                    <feOffset result="afterOffset" />
+                    <feFlood floodColor="#fff" floodOpacity={0.8} />
+                    <feComposite in2="afterOffset" operator="in" />
+                    <feMorphology operator="dilate" radius={8} />
+                    <feComposite in2="SourceAlpha" operator="in" />
+                  </filter>
+                  <path
+                    d="M422.82 488.75c0 55.93-45.41 101.34-101.34 101.34-55.94 0-101.35-45.41-101.35-101.34 0-55.94 45.41-101.35 101.35-101.35 55.93 0 101.34 45.41 101.34 101.35z"
+                    id="prefix__aOs7VVQBO"
+                    fill="#fff"
+                    fillOpacity={1}
+                    filter="url(#prefix__shadow5863355)"
+                  />
+                </g>
+              </motion.g>
+            </g>
           </g> 
-          </motion.g>
+        </motion.g>
       </g>
     </svg>
   )
@@ -748,22 +765,22 @@ AirScooterSVG.propTypes = {
     boots: PropTypes.string,
     tattoos: PropTypes.string,
     neckShadow: PropTypes.string,
-    collarShadow: PropTypes.string
-  }
+    collarShadow: PropTypes.string,
+  },
 }
 AirScooterSVG.defaultProps = {
   colourScheme: {
-    primary: "#d4721d",
+    primary: '#d4721d',
     secondary: '#e1c002',
     skin: '#fddbb9',
-    boots: "#8e715e",
-    tattoos: "#90c2e1",
-    neckShadow: "#bba085",
-    collarShadow: "#f0b90a"
+    boots: '#8e715e',
+    tattoos: '#90c2e1',
+    neckShadow: '#bba085',
+    collarShadow: '#f0b90a',
   },
-  size: 400
+  size: 400,
 }
 
 
-export default AirScooterSVG;
+export default AirScooterSVG
 

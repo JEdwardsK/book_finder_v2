@@ -3,7 +3,7 @@ import AirScooterSVG from './AirScooterSVG'
 
 const aangColourScheme = {
   primary: "#d4721d",
-  secondary: 'black',
+  secondary: '#e1c002',
   skin: '#fddbb9',
   boots: "#8e715e",
   tattoos: "#90c2e1",

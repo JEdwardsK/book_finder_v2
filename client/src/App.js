@@ -1,13 +1,13 @@
 import React from 'react'
-import { BrowserRouter, Link, Switch } from 'react-router-dom'
+import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import HomePage from './components/HomePage'
 const App = () => {
   return (
     <BrowserRouter>
     <Switch>
-      <Link to ='/'>
+      <Route to ='/'>
         <HomePage/>
-      </Link>
+      </Route>
     </Switch>
     </BrowserRouter>
   )

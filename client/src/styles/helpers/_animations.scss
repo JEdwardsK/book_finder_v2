@@ -26,5 +26,40 @@
 /// Animation intends to simulate air-bending tattoos glowing
 /// @author J Edwards
 @keyframes avatarState {
+  0% {
+    fill: #90c2e1
+  }
+
+  3% {
+    fill: white;
+
+  }
+  30% {
+    fill: white;
+
+  }
+  40% {
+    fill: #90c2e1
+  }
   
+  100% {
+    fill: #90c2e1
+  }
+
+}
+
+/// Animation to simulate hovering
+/// @author J Edwards
+@keyframes aangHover {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(3%);
+  }
+
+  100%{
+    transform: translateY(0%)
+  }
 }

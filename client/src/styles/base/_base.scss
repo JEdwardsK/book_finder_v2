@@ -22,6 +22,7 @@ html {
   box-sizing: inherit;
 }
 
+
 /**
  * Basic styles for links
  */
@@ -33,4 +34,8 @@ a {
     color: $text-color;
     text-decoration: underline;
   }
+}
+
+body {
+  background-color: #eeeeee;
 }

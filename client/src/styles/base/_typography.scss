@@ -1,15 +1,29 @@
-@use '../helpers/variables' as *;
-
 // -----------------------------------------------------------------------------
 // This file contains typography styles
 // -----------------------------------------------------------------------------
 
+@use '../helpers/variables' as *;
+@use './fonts';
 
 
 /**
  * Basic typography style for copy text
  */
+
+
 body {
   color: $text-color;
   font: normal 125% / 1.4 $text-font-stack;
+}
+
+* {
+  font-family:'A-OTF Shin Go Pro R';
+}
+
+h2 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  line-height: 1.2;
+  font-size: 2rem;
 }

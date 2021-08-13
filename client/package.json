@@ -1,7 +1,7 @@
 {
   "name": "client",
   "version": "0.1.0",
-  "homepage": "https://jedwardsk.github.io/bookfinder2",
+  "homepage": "https://jedwardsk.github.io/book_finder_v2",
   "private": true,
   "dependencies": {
     "eslint-plugin-jsx-a11y": "^6.2.3",
@@ -20,7 +20,7 @@
     "eject": "react-scripts eject",
     "dev": "react-scripts start",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -b main -d build"
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
