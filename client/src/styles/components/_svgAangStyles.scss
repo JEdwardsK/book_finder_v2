@@ -5,5 +5,5 @@
 @use '../helpers/animations' as *;
 
 .scooter_style {
-  animation: scooterAnimate .5s linear infinite;
+  animation: scooterAnimate .5s 4s linear infinite;
 }
