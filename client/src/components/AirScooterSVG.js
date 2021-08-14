@@ -160,7 +160,7 @@ function AirScooterSVG({ colourScheme, size }) {
           animate={{
             // translateZ: [0, 2, 4, 2, 0],
             scale: [0, 1],
-            rotate: [0, 720],
+
           }}
           transition={{
             // repeat: Infinity,
